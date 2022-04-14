@@ -94,6 +94,8 @@ internal class DayViewHolder(view: View) : CalendarViewHolder(view) {
             name.setTextColor(getFontColor(item))
             if (item.state == DateState.DISABLED) {
                 name.paintFlags = name.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            } else {
+                name.paintFlags = name.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
             }
 
             if (item.state != DateState.DISABLED) {
