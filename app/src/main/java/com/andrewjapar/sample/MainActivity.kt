@@ -33,8 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         calendar_view.apply {
-            setRangeDate(firstCalendarDate.time, secondCalendarDate.time)
-            setSelectionDate(firstCalendarDate.time, thirdCalendarDate.time)
+            setSelectionDate(Date())
         }
     }
 }

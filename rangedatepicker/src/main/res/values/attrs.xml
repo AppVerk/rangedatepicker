@@ -6,5 +6,8 @@
             <enum name="range" value="1" />
         </attr>
         <attr name="showDayOfWeekTitle" format="boolean" />
+        <attr name="monthFontFamily" format="reference" />
+        <attr name="dayFontFamily" format="reference" />
+        <attr name="dayDisabledFontFamily" format="reference" />
     </declare-styleable>
 </resources>

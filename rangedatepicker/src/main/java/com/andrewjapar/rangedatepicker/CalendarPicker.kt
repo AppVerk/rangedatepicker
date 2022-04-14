@@ -24,6 +24,9 @@
 package com.andrewjapar.rangedatepicker
 
 import android.content.Context
+import android.graphics.Typeface
+import android.graphics.fonts.Font
+import android.graphics.fonts.FontFamily
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -55,6 +58,7 @@ class CalendarPicker : RecyclerView {
     constructor(context: Context) : super(context)
     constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) {
         extractAttributes(attributeSet)
+        init()
     }
 
     constructor(context: Context, attributeSet: AttributeSet, defStyle: Int) : super(
@@ -63,9 +67,10 @@ class CalendarPicker : RecyclerView {
         defStyle
     ) {
         extractAttributes(attributeSet)
+        init()
     }
 
-    init {
+    private fun init() {
         startCalendar.set(HOUR_OF_DAY, 0)
         startCalendar.set(MINUTE, 0)
         startCalendar.set(SECOND, 0)

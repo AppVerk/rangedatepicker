@@ -23,6 +23,7 @@
 
 package com.andrewjapar.rangedatepicker
 
+import android.graphics.Paint
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -91,6 +92,10 @@ internal class DayViewHolder(view: View) : CalendarViewHolder(view) {
             }
 
             name.setTextColor(getFontColor(item))
+            if (item.state == DateState.DISABLED) {
+                name.paintFlags = name.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            }
+
             if (item.state != DateState.DISABLED) {
                 itemView.setOnClickListener {
                     actionListener.invoke(
