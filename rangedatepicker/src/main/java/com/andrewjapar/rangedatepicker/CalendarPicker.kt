@@ -160,6 +160,28 @@ class CalendarPicker : RecyclerView {
         onDaySelected(mCalendarData[index] as CalendarEntity.Day, index)
     }
 
+    fun selectDates(fromDate: Date, endDate: Date?) {
+        val fromIndex =
+            mCalendarData.indexOfFirst { it is CalendarEntity.Day && it.date.isTheSameDay(fromDate) }
+        require(fromIndex > -1) {
+            "Selection date must be included in your Calendar Range Date"
+        }
+
+        if (endDate != null) {
+            val toIndex = mCalendarData.indexOfFirst {
+                it is CalendarEntity.Day && it.date.isTheSameDay(endDate)
+            }
+            require(toIndex > -1) {
+                "Selection date must be included in your Calendar Range Date"
+            }
+
+            onDaySelected(mCalendarData[fromIndex] as CalendarEntity.Day, fromIndex)
+            onDaySelected(mCalendarData[toIndex] as CalendarEntity.Day, toIndex)
+        } else {
+            onDaySelected(mCalendarData[fromIndex] as CalendarEntity.Day, fromIndex)
+        }
+    }
+
     private fun refreshData() {
         mCalendarData = buildCalendarData()
         calendarAdapter.submitList(mCalendarData)
@@ -344,6 +366,7 @@ class CalendarPicker : RecyclerView {
         mCalendarData[position] = newItem
         mStartDateSelection = SelectedDate(newItem, position)
         if (!isRange) mOnStartSelectedListener.invoke(item.date, item.prettyLabel)
+
     }
 
     private fun assignAsEndDate(

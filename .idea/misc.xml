@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18385416666666668" />
+        <entry key="rangedatepicker/src/main/res/layout/calendar_day_view.xml" value="0.18385416666666668" />
         <entry key="rangedatepicker/src/main/res/layout/calendar_empty_view.xml" value="0.18385416666666668" />
         <entry key="rangedatepicker/src/main/res/layout/calendar_month_view.xml" value="0.18385416666666668" />
         <entry key="rangedatepicker/src/main/res/layout/calendar_picker_extended.xml" value="0.18385416666666668" />

@@ -9,4 +9,6 @@
     <dimen name="calendar_month_textsize">16sp</dimen>
 
     <dimen name="calendar_week_textsize">12sp</dimen>
+
+    <dimen name="calendar_month_font_weight">800</dimen>
 </resources>

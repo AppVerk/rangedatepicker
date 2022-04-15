@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val firstCalendarDate = Calendar.getInstance()
-        firstCalendarDate.set(2019, 9, 1)
+        firstCalendarDate.set(2022, 4, 18)
 
         val secondCalendarDate = Calendar.getInstance()
         secondCalendarDate.time = firstCalendarDate.time
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val thirdCalendarDate = Calendar.getInstance()
         thirdCalendarDate.time = firstCalendarDate.time
-        thirdCalendarDate.add(Calendar.MONTH, 2)
+        thirdCalendarDate.add(Calendar.DAY_OF_MONTH, 3)
 
         calendar_view.setOnRangeSelectedListener { startDate, endDate, startLabel, endLabel ->
             departure_date.text = startLabel
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         calendar_view.apply {
-            setSelectionDate(Date())
+            selectDates(firstCalendarDate.time, firstCalendarDate.time)
         }
     }
 }
